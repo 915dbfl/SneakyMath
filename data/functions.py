@@ -4,8 +4,8 @@ import pygame
 import os
 import sys
 
-
-def blit_alpha(target, source, location, opacity=None):
+#픽셀당 투명도 적용을 가능케 함. sneakymath에선 적용 사항이 없는 듯 보임.
+def blit_alpha(target, source, location, opacity=1):
     """Blit an image with tranparency
     at lower transparency
     (not supported by pygame by default)
@@ -22,7 +22,7 @@ def blit_alpha(target, source, location, opacity=None):
         temp.set_alpha(opacity)
         target.blit(temp, location)
 
-
+#리소스들의 절대경로 고정
 def resource_path(relative_path):
     """Get absolute path to resource, works for dev and for PyInstaller
     source: stackoverflow

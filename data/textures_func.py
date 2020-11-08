@@ -132,7 +132,7 @@ def nbr_color(value):
     """Generate the color of a number block
     depending to its value
     """
-    #값에 다른 숫자 블록의 색 생성
+    #값에 따른 숫자 블록의 색 생성
     return (150 + value * 10, 120, 100 + (10 - value) * 10)
 
 

@@ -9,5 +9,5 @@ Copyright: (c) Romain Benoit 2020
 """
 
 import data.main as main
-
+#main.py 통해 게임 실행
 main.main()

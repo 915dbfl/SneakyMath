@@ -43,9 +43,9 @@ class Grid:
         col_offset, row_offset = round(c.NB_COLS / 4), round(c.NB_ROWS / 4)
         ope_list = (
             ("+", (col_offset, row_offset)),
-            ("+", (c.NB_COLS - col_offset - 1, c.NB_ROWS - row_offset - 1)),
+            ("÷", (c.NB_COLS - col_offset - 1, c.NB_ROWS - row_offset - 1)),
             ("-", (col_offset, c.NB_ROWS - row_offset - 1)),
-            ("-", (c.NB_COLS - col_offset - 1, row_offset)),
+            ("×", (c.NB_COLS - col_offset - 1, row_offset)),
         )
         for ope, pos in ope_list:
             self[pos] = Operation(ope)

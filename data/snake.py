@@ -101,13 +101,28 @@ class Snake:
             # 숫자를 먹었을 때
             if isinstance(front_tile, Number):
                 if "+" in self.ope: # + 블록을 먹었을 때
+                    print(self.inc)
                     self.inc += front_tile.value
+                    print(self.inc)
                     nbr_new = 2
                 elif "-" in self.ope: # - 블록을 먹었을 때
+                    print(self.inc)
                     self.inc -= front_tile.value
+                    print(self.inc)
+                    nbr_new = 2
+                elif "÷" in self.ope: # / 블록을 먹었을 때
+                    print(len(self))
+                    self.inc -= (len(self) - (int)(len(self)/front_tile.value))
+                    print(self.inc)
+                    nbr_new = 2
+                elif "×" in self.ope: # * 블록을 먹었을 때(먹은 블록의 두배 수가 늘어난다.)
+                    print(self.inc)
+                    self.inc += front_tile.value*2
+                    print(self.inc)
                     nbr_new = 2
                 for _ in range(nbr_new):
                     self.behind_queue.append(Number())
+                    
             # 블록을 먹었을 때
             if isinstance(front_tile, Operation):
                 self.ope = "change to " + front_tile.ope
@@ -115,6 +130,11 @@ class Snake:
                     self.behind_queue.append(Operation("-"))
                 elif front_tile.ope == "-":
                     self.behind_queue.append(Operation("+"))
+                elif front_tile.ope == "÷":
+                    self.behind_queue.append(Operation("×"))
+                elif front_tile.ope == "×":
+                    self.behind_queue.append(Operation("÷"))
+            
             # 뱀 몸부분에 닿았을 때
             elif front_tile in self.parts:
                 self.dead = True
