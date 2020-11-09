@@ -8,7 +8,6 @@ from data.tiles import SnakePart, Number, Operation, Tile
 
 class Grid:
     # 모든 타일을 저장함
-
     #초기화
     def __init__(self):
         self._grid = [[None for y in range(c.NB_ROWS)] for x in range(c.NB_COLS)]
@@ -46,6 +45,7 @@ class Grid:
             ("÷", (c.NB_COLS - col_offset - 1, c.NB_ROWS - row_offset - 1)),
             ("-", (col_offset, c.NB_ROWS - row_offset - 1)),
             ("×", (c.NB_COLS - col_offset - 1, row_offset)),
+            ("R", (c.NB_COLS - col_offset - 2, row_offset - 1))
         )
         for ope, pos in ope_list:
             self[pos] = Operation(ope)

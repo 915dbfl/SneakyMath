@@ -184,6 +184,9 @@ class Textures:
         text = func.relief_text("×", font, color)
         dflt["×"] = text.convert_alpha()
 
+        text = func.relief_text("R", font, color)
+        dflt["R"] = text.convert_alpha()
+
 
 
         #+블록 텍스쳐
@@ -225,6 +228,17 @@ class Textures:
         rect.y = round((c.T_H - rect.h - c.S_H) / 2)
         img.blit(text, rect)
         dflt["operation_×"] = img.convert()
+
+        # 리셋(R) -블록 텍스쳐
+        ope_img = dflt["field_tile"].copy()
+        ope_img.blit(func.tile(self.color["white"]), (0, 0))
+        img = ope_img.copy()
+        text = dflt["R"].copy()
+        rect = text.get_rect()
+        rect.x = round((c.T_W - rect.w) / 2)
+        rect.y = round((c.T_H - rect.h - c.S_H) / 2)
+        img.blit(text, rect)
+        dflt["operation_R"] = img.convert()
 
         #숫자블록 텍스쳐
         font = self.font["number"]
