@@ -156,8 +156,8 @@ class Number(Block):
     def __init__(self, pos=None, value=None):
         super().__init__(pos)
         if value is None:
-            value = random.randint(1, 9)
-            # 1부터 9사이의 임의의 숫자
+            value = random.choice([-9, -8, -7, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+            # -9부터 9사이의 임의의 숫자(0제외)
         self.value = value
         self.image = textures.dflt["number_" + str(value)]
 

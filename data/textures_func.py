@@ -133,7 +133,7 @@ def nbr_color(value):
     depending to its value
     """
     #값에 따른 숫자 블록의 색 생성
-    return (150 + value * 10, 120, 100 + (10 - value) * 10)
+    return (150 + value * 10, 120, 100 + (10 - value/2) * 10)
 
 
 def get_font(font_path, multiplier=1):

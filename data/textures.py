@@ -243,7 +243,7 @@ class Textures:
         #숫자블록 텍스쳐
         font = self.font["number"]
         color = self.color["white_txt"]
-        for nbr in range(1, 10):
+        for nbr in range(-9, 10):
             nbr_color = func.color_palette(func.nbr_color(nbr))
             img = dflt["field_tile"].copy()
             img.blit(func.tile(nbr_color), (0, 0))
