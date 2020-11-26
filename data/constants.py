@@ -15,8 +15,8 @@ FONTS_PATH = "data/fonts"
 
 # Screen 크기 조정
 infoObject = pygame.display.Info()
-SCREEN_W = infoObject.current_w
-SCREEN_H = infoObject.current_h
+SCREEN_W = 1280
+SCREEN_H =720
 SCREEN_SIZE = (SCREEN_W, SCREEN_H)
 
 NB_COLS = 20 

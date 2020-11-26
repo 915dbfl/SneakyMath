@@ -17,6 +17,7 @@ class View:
         self.clock = pygame.time.Clock()
         self.header = None
         self.field = None
+        self.bg_img = pygame.image.load('b.png')
 
     def init_textures(self):
         # 텍스쳐 초기화 후 창을 사용자 지정해주는 함수
@@ -36,18 +37,15 @@ class View:
 
        #메뉴 화면 나타내기
     def draw_menu(self):
-        self.screen.fill(textures.color["background"])
-        textures.text(self, "title", c.GAME_NAME.upper())
+        self.screen.blit(self.bg_img,self.bg_img.get_rect())
+        textures.text(self, "title", "")
         textures.text(
              # 시작 화면 설명란
-            self, "menu", "Appuyer sur [Entrée] pour commencer ou [Echap] pour quitter" 
+            self, "menu", ""
         )
         textures.text(
             self,
-            "footnote",
-            "© Créé par Romain avec l'aide de Natan "
-            + "pour le prix Bernard Novelli des Trophées Tangente 2020 — Version "
-            + c.VERSION,
+            "footnote",""
         )
 
     # 화면이 멈췄을 때
