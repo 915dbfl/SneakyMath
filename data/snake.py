@@ -120,10 +120,7 @@ class Snake:
                     self.inc += front_tile.value*2
                     print(self.inc)
                     nbr_new = 2
-                elif "R" in self.ope: # R 블록 먹었을 때
-                    self.inc = 0
-                    nbr_new = 2
-
+                    
                 for _ in range(nbr_new):
                     self.behind_queue.append(Number())
                     
@@ -139,7 +136,6 @@ class Snake:
                 elif front_tile.ope == "×":
                     self.behind_queue.append(Operation("÷"))
                 elif front_tile.ope == "R":
-                    self.behind_queue.append(Operation("R"))
                     self.__init__()
             
             # 뱀 몸부분에 닿았을 때

@@ -45,7 +45,7 @@ class Grid:
             ("÷", (c.NB_COLS - col_offset - 1, c.NB_ROWS - row_offset - 1)),
             ("-", (col_offset, c.NB_ROWS - row_offset - 1)),
             ("×", (c.NB_COLS - col_offset - 1, row_offset)),
-            ("R", (c.NB_COLS - col_offset - 2, row_offset - 1))
+            ("R", (random.randint(0, c.NB_COLS - 1),random.randint(0, c.NB_ROWS - 1)))
         )
         for ope, pos in ope_list:
             self[pos] = Operation(ope)
